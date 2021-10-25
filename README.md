@@ -1,6 +1,6 @@
-#Thema: Online-Rezeptbuch
+# Thema: Online-Rezeptbuch
 
-##Beschreibung:
+## Beschreibung:
 * Ich möchte ein Online-Rezeptbuch erstellen, in dem Rezepte gespeichert werden können. Zutaten sollen bereits
 gespeichert sein.
 
