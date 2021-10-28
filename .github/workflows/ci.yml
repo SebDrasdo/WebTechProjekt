@@ -3,7 +3,7 @@ name: CI
 on: [ push ]
 
 jobs:
-  build:-on: ubuntu-latest
+  build-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 16
