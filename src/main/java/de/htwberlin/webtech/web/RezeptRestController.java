@@ -1,6 +1,6 @@
-package de.htwberlin.webtech;
+package de.htwberlin.webtech.web;
 
-import de.htwberlin.webtech.api.Rezept;
+import de.htwberlin.webtech.web.api.Rezept;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

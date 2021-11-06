@@ -1,4 +1,4 @@
-package de.htwberlin.webtech;
+package de.htwberlin.webtech.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package de.htwberlin.webtech.api;
+package de.htwberlin.webtech.web.api;
 
 public class Rezept {
 
