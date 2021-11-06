@@ -1,13 +1,13 @@
 package de.htwberlin.webtech.api;
 
-public class Rezept {
+public class Recipe {
 
     private long id;
     private String firstName;
     private String lastName;
     private boolean vaccinated;
 
-    public Rezept(long id, String firstName, String lastName, boolean vaccinated) {
+    public Recipe(long id, String firstName, String lastName, boolean vaccinated) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

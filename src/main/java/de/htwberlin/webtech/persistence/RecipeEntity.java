@@ -3,7 +3,7 @@ package de.htwberlin.webtech.persistence;
 import javax.persistence.*;
 
 @Entity (name = "Rezepte")
-public class RecepieEntity {
+public class RecipeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,14 +19,14 @@ public class RecepieEntity {
     @Column (name = "impfstatus")
     private Boolean vaccinated;
 
-    public RecepieEntity(Long id, String firstName, String lastName, Boolean vaccinated) {
+    public RecipeEntity(Long id, String firstName, String lastName, Boolean vaccinated) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.vaccinated = vaccinated;
     }
 
-    protected RecepieEntity() {
+    protected RecipeEntity() {
     }
 
     public Long getId() {
@@ -56,4 +56,5 @@ public class RecepieEntity {
     public void setVaccinated(Boolean vaccinated) {
         this.vaccinated = vaccinated;
     }
+
 }
