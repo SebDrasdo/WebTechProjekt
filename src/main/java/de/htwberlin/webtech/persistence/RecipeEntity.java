@@ -19,15 +19,14 @@ public class RecipeEntity {
     @Column (name = "impfstatus")
     private Boolean vaccinated;
 
-    public RecipeEntity(Long id, String firstName, String lastName, Boolean vaccinated) {
-        this.id = id;
+    public RecipeEntity(String firstName, String lastName, Boolean vaccinated) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.vaccinated = vaccinated;
     }
 
-    protected RecipeEntity() {
-    }
+    protected RecipeEntity() {}
 
     public Long getId() {
         return id;
