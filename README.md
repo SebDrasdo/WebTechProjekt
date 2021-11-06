@@ -1,3 +1,5 @@
+[![CI](https://github.com/SebDrasdo/WebTechProjekt/actions/workflows/ci.yml/badge.svg)](https://github.com/SebDrasdo/WebTechProjekt/actions/workflows/ci.yml)
+
 # Thema: Online-Rezeptbuch
 
 ## Beschreibung:
