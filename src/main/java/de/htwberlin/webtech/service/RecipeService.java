@@ -25,6 +25,11 @@ public class RecipeService {
                 .collect(Collectors.toList());
     }
 
+    public Recipe findById(Long id) {
+        var  recipeEntity = recipeRepository.findById(id);
+        return recipeEntity.map(this::transformEntity).orElse(null);
+    }
+
     public Recipe create(RecipeCreateRequest request) {
         var recipeEntity = new RecipeEntity(request.getFirstName(), request.getLastName(), request.isVaccinated());
         recipeEntity = recipeRepository.save(recipeEntity);
