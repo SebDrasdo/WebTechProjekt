@@ -3,7 +3,7 @@ package de.htwberlin.webtech.service;
 import de.htwberlin.webtech.web.api.Recipe;
 import de.htwberlin.webtech.persistence.RecipeEntity;
 import de.htwberlin.webtech.persistence.RecipeRepository;
-import de.htwberlin.webtech.web.api.RecipeCreateRequest;
+import de.htwberlin.webtech.web.api.RecipeCreateOrUpdateRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,10 +30,32 @@ public class RecipeService {
         return recipeEntity.map(this::transformEntity).orElse(null);
     }
 
-    public Recipe create(RecipeCreateRequest request) {
+    public Recipe create(RecipeCreateOrUpdateRequest request) {
         var recipeEntity = new RecipeEntity(request.getFirstName(), request.getLastName(), request.isVaccinated());
         recipeEntity = recipeRepository.save(recipeEntity);
         return transformEntity(recipeEntity);
+    }
+
+    public Recipe update(Long id, RecipeCreateOrUpdateRequest request) {
+        var  recipeEntityOptional = recipeRepository.findById(id);
+        if (recipeEntityOptional.isEmpty()) {
+            return null;
+        }
+        var recipeEntity = recipeEntityOptional.get();
+        recipeEntity.setFirstName(request.getFirstName());
+        recipeEntity.setLastName(request.getLastName());
+        recipeEntity.setVaccinated(request.isVaccinated());
+        recipeRepository.save(recipeEntity);
+
+        return transformEntity(recipeEntity);
+    }
+
+    public boolean deleteById(Long id) {
+        if (!recipeRepository.existsById(id)) {
+            return false;
+        }
+        recipeRepository.deleteById(id);
+        return true;
     }
 
     private Recipe transformEntity(RecipeEntity recipeEntity) {

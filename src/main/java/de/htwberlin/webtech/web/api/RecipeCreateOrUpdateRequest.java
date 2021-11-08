@@ -1,12 +1,12 @@
 package de.htwberlin.webtech.web.api;
 
-public class RecipeCreateRequest {
+public class RecipeCreateOrUpdateRequest {
 
     private String firstName;
     private String lastName;
     private boolean vaccinated;
 
-    public RecipeCreateRequest(String firstName, String lastName, boolean vaccinated) {
+    public RecipeCreateOrUpdateRequest(String firstName, String lastName, boolean vaccinated) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.vaccinated = vaccinated;
