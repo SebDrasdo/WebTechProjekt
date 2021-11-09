@@ -3,46 +3,46 @@ package de.htwberlin.webtech.web.api;
 public class Recipe {
 
     private long id;
-    private String firstName;
-    private String lastName;
-    private boolean vaccinated;
+    private String recipeName;
+    private String description;
+    private boolean vegan;
 
-    public Recipe(long id, String firstName, String lastName, boolean vaccinated) {
+    public Recipe(long id, String recipeName, String description, boolean vegan) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.vaccinated = vaccinated;
+        this.recipeName = recipeName;
+        this.description = description;
+        this.vegan = vegan;
     }
 
     public long getId() {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getRecipeName() {
+        return recipeName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getDescription() {
+        return description;
     }
 
-    public boolean isVaccinated() {
-        return vaccinated;
+    public boolean isVegan() {
+        return vegan;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setRecipeName(String recipeName) {
+        this.recipeName = recipeName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setVaccinated(boolean vaccinated) {
-        this.vaccinated = vaccinated;
+    public void setVegan(boolean vegan) {
+        this.vegan = vegan;
     }
 }

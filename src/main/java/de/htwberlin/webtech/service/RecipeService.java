@@ -31,7 +31,7 @@ public class RecipeService {
     }
 
     public Recipe create(RecipeCreateOrUpdateRequest request) {
-        var recipeEntity = new RecipeEntity(request.getFirstName(), request.getLastName(), request.isVaccinated());
+        var recipeEntity = new RecipeEntity(request.getRecipeName(), request.getDescription(), request.isVegan());
         recipeEntity = recipeRepository.save(recipeEntity);
         return transformEntity(recipeEntity);
     }
@@ -42,9 +42,9 @@ public class RecipeService {
             return null;
         }
         var recipeEntity = recipeEntityOptional.get();
-        recipeEntity.setFirstName(request.getFirstName());
-        recipeEntity.setLastName(request.getLastName());
-        recipeEntity.setVaccinated(request.isVaccinated());
+        recipeEntity.setRecipeName(request.getRecipeName());
+        recipeEntity.setDescription(request.getDescription());
+        recipeEntity.setVegan(request.isVegan());
         recipeRepository.save(recipeEntity);
 
         return transformEntity(recipeEntity);
@@ -61,9 +61,9 @@ public class RecipeService {
     private Recipe transformEntity(RecipeEntity recipeEntity) {
         return new Recipe(
                 recipeEntity.getId(),
-                recipeEntity.getFirstName(),
-                recipeEntity.getLastName(),
-                recipeEntity.getVaccinated()
+                recipeEntity.getRecipeName(),
+                recipeEntity.getDescription(),
+                recipeEntity.getVegan()
         );
     }
 }

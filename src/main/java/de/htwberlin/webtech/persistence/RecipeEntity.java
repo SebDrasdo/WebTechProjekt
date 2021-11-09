@@ -2,7 +2,7 @@ package de.htwberlin.webtech.persistence;
 
 import javax.persistence.*;
 
-@Entity (name = "Rezepte")
+@Entity (name = "recipes")
 public class RecipeEntity {
 
     @Id
@@ -10,20 +10,20 @@ public class RecipeEntity {
     @Column (name = "id")
     private Long id;
 
-    @Column (name = "first_name", nullable = false)
-    private String firstName;
+    @Column (name = "recipe_name", nullable = false)
+    private String recipeName;
 
-    @Column (name = "last_name", nullable = false)
-    private String lastName;
+    @Column (name = "description", nullable = false)
+    private String description;
 
-    @Column (name = "impfstatus")
-    private Boolean vaccinated;
+    @Column (name = "vegan")
+    private Boolean vegan;
 
-    public RecipeEntity(String firstName, String lastName, Boolean vaccinated) {
+    public RecipeEntity(String recipeName, String description, Boolean vegan) {
 
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.vaccinated = vaccinated;
+        this.recipeName = recipeName;
+        this.description = description;
+        this.vegan = vegan;
     }
 
     protected RecipeEntity() {}
@@ -32,28 +32,28 @@ public class RecipeEntity {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getRecipeName() {
+        return recipeName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setRecipeName(String recipeName) {
+        this.recipeName = recipeName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getDescription() {
+        return description;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Boolean getVaccinated() {
-        return vaccinated;
+    public Boolean getVegan() {
+        return vegan;
     }
 
-    public void setVaccinated(Boolean vaccinated) {
-        this.vaccinated = vaccinated;
+    public void setVegan(Boolean vegan) {
+        this.vegan = vegan;
     }
 
 }
