@@ -12,6 +12,8 @@ public class RecipeCreateOrUpdateRequest {
         this.vegan = vegan;
     }
 
+    public RecipeCreateOrUpdateRequest(){}
+
     public String getRecipeName() {
         return recipeName;
     }

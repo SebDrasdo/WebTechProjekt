@@ -14,6 +14,8 @@ public class IngredientCreateOrUpdateRequest {
         this.vegan = vegan;
     }
 
+    public IngredientCreateOrUpdateRequest() {}
+
     public String getIngredientName() {
         return ingredientName;
     }
